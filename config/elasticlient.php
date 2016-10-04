@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: georgios
- * Date: 10/4/2016
- * Time: 9:00 AM
- */
-
 return [
 
     /*
@@ -14,8 +7,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Here you may specify which of the connections below you wish to use as
-    | your default connection for all work. Of course, you may use many
-    | connections at once using the manager class.
+    | your default connection.
     |
     */
 
@@ -23,12 +15,11 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Hashids Connections
+    | ElastiClient Connections
     |--------------------------------------------------------------------------
     |
-    | Here are each of the connections setup for your application. Example
-    | configuration has been included, but you may add as many connections as
-    | you would like.
+    | Here are each of the connections setup for your application. Change the values
+    | to correspond to your ElasticSearch server.
     |
     */
 

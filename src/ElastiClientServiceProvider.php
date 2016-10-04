@@ -12,6 +12,9 @@ use Georgios\ElastiClient\Facades\ElastiClient;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
 
+use Illuminate\Foundation\Application as LaravelApplication;
+use Laravel\Lumen\Application as LumenApplication;
+
 /**
  * This is the ElastiClient service provider class.
  *
@@ -38,6 +41,24 @@ class ElastiClientServiceProvider extends ServiceProvider {
         $this->registerFactory();
         $this->registerManager();
         $this->registerBindings();
+    }
+
+    /**
+     * Setup the config.
+     *
+     * @return void
+     */
+    protected function setupConfig()
+    {
+        $source = realpath(__DIR__.'/../config/elasticlient.php');
+
+        if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
+            $this->publishes([$source => config_path('elasticlient.php')]);
+        } elseif ($this->app instanceof LumenApplication) {
+            $this->app->configure('elasticlient');
+        }
+
+        $this->mergeConfigFrom($source, 'elasticlient');
     }
 
     /**
@@ -68,7 +89,7 @@ class ElastiClientServiceProvider extends ServiceProvider {
             return new ElastiClientManager($config, $factory);
         });
 
-        $this->app->alias('elasticlient', HashidsManager::class);
+        $this->app->alias('elasticlient', ElastiClientManager::class);
     }
 
     /**

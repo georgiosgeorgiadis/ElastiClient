@@ -10,7 +10,7 @@ use Illuminate\Contracts\Config\Repository;
 *
 * @author Georgios Georgiadis <georgios@georgiadis.co.uk>
 */
-class HashidsManager extends AbstractManager {
+class ElastiClientManager extends AbstractManager {
 
     /**
      * The factory instance.

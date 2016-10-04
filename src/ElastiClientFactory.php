@@ -1,23 +1,17 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: georgios
- * Date: 10/4/2016
- * Time: 8:42 AM
- */
 
 namespace Georgios\ElastiClient;
 use Elasticsearch\ClientBuilder;
 
 /**
- * This is the Hashids factory class.
+ * The ElastiClient factory class.
  *
- * @author Vincent Klaiber <hello@vinkla.com>
+ * @author Georgios Georgiadis <georgios@georgiadis.com>
  */
 class ElastiClientFactory {
 
     /**
-     * Make a new ElastiClient client.
+     * Make a new ElasticSearch client.
      *
      * @param array $config
      *
@@ -49,7 +43,7 @@ class ElastiClientFactory {
     }
 
     /**
-     * Get the hashids client.
+     * Get the ElasticSearch client.
      *
      * @param array $config
      *
