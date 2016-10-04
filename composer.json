@@ -1,0 +1,44 @@
+{
+  "name": "georgios/elasticlient",
+  "description": "A bridge for ElasticSearch for Laravel",
+  "license": "MIT",
+  "keywords": ["laravel", "elasticsearch", "search", "index"],
+  "authors": [
+    {
+      "name": "Georgios Georgiadis",
+      "email": "georgios@georgiadis.co.uk"
+    }
+  ],
+  "require": {
+    "php": "^5.6.4 || ^7.0",
+    "illuminate/contracts": "5.1.* || 5.2.* || 5.3.*",
+    "illuminate/support": "5.1.* || 5.2.* || 5.3.*",
+    "graham-campbell/manager": "^2.4",
+    "elasticsearch/elasticsearch": "~2.0@beta"
+  },
+  "require-dev": {
+    "graham-campbell/testbench": "^3.2",
+    "mockery/mockery": "^0.9.5",
+    "phpunit/phpunit": "^5.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Georgios\\ElastiClient\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Georgios\\Tests\\ElastiClient\\": "tests/"
+    }
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "2.4-dev"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
