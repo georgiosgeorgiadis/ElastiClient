@@ -35,11 +35,7 @@ class ElastiClientFactory {
      */
     protected function getConfig(array $config)
     {
-        return [
-            'salt' => array_get($config, 'salt', ''),
-            'length' => array_get($config, 'length', 0),
-            'alphabet' => array_get($config, 'alphabet', ''),
-        ];
+        return $config;
     }
 
     /**
